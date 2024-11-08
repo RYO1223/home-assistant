@@ -9,3 +9,7 @@ services:
     restart: unless-stopped
     privileged: true
     network_mode: host
+  ha-alexa-shopping-list-sync:
+    image: "madmachinations/ha-alexa-shopping-list-sync:latest"
+    volumes:
+      - ./alexa-config:/config
