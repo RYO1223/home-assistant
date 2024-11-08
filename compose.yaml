@@ -6,8 +6,6 @@ services:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
-    networks:
-      - home_assistant
     restart: unless-stopped
     privileged: true
     network_mode: host
@@ -15,10 +13,4 @@ services:
     image: "madmachinations/ha-alexa-shopping-list-sync:latest"
     volumes:
       - ./alexa-config:/config
-    ports:
-      - 4000:4000
-    networks:
-      - home_assistant
-
-networks:
-  home_assistant:
+    network_mode: host
