@@ -13,3 +13,5 @@ services:
     image: "madmachinations/ha-alexa-shopping-list-sync:latest"
     volumes:
       - ./alexa-config:/config
+    ports:
+      - 4000:4000
